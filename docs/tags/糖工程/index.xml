@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>糖工程 on 蛋白纯化文献赏析</title>
+    <link>https://jinbaisheng.github.io/tags/%E7%B3%96%E5%B7%A5%E7%A8%8B/</link>
+    <description>Recent content in 糖工程 on 蛋白纯化文献赏析</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jinbaisheng.github.io/tags/%E7%B3%96%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抗体 Fc 段工程化改造：增强 ADCC 活性的技术突破</title>
+      <link>https://jinbaisheng.github.io/posts/fc-engineering-adcc/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinbaisheng.github.io/posts/fc-engineering-adcc/</guid>
+      <description>深入分析抗体 Fc 段工程化改造技术，从工艺工程师视角解读其在提高 ADCC 活性方面的创新与应用</description>
+    </item>
+    
+  </channel>
+</rss>

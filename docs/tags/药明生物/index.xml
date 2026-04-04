@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>药明生物 on 蛋白纯化文献赏析</title>
+    <link>https://jinbaisheng.github.io/tags/%E8%8D%AF%E6%98%8E%E7%94%9F%E7%89%A9/</link>
+    <description>Recent content in 药明生物 on 蛋白纯化文献赏析</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jinbaisheng.github.io/tags/%E8%8D%AF%E6%98%8E%E7%94%9F%E7%89%A9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>氨基酸诱导 pH 偏移策略：革新 Protein A 层析洗脱工艺</title>
+      <link>https://jinbaisheng.github.io/posts/amino-acid-ph-shift-protein-a/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinbaisheng.github.io/posts/amino-acid-ph-shift-protein-a/</guid>
+      <description>深入分析药明生物团队研发的氨基酸诱导 pH 偏移洗脱策略，解决低 pH 不稳定抗体的 Protein A 层析聚集难题</description>
+    </item>
+    
+  </channel>
+</rss>

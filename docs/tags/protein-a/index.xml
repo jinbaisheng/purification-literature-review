@@ -2,22 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Protein A on 蛋白纯化文献赏析</title>
-    <link>https://jinbaisheng.github.io/purification-literature-review/tags/protein-a/</link>
+    <link>https://jinbaisheng.github.io/tags/protein-a/</link>
     <description>Recent content in Protein A on 蛋白纯化文献赏析</description>
-    <image>
-      <title>蛋白纯化文献赏析</title>
-      <url>https://jinbaisheng.github.io/purification-literature-review/images/og-image.jpg</url>
-      <link>https://jinbaisheng.github.io/purification-literature-review/images/og-image.jpg</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jinbaisheng.github.io/purification-literature-review/tags/protein-a/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jinbaisheng.github.io/tags/protein-a/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>氨基酸诱导 pH 偏移策略：革新 Protein A 层析洗脱工艺</title>
+      <link>https://jinbaisheng.github.io/posts/amino-acid-ph-shift-protein-a/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinbaisheng.github.io/posts/amino-acid-ph-shift-protein-a/</guid>
+      <description>深入分析药明生物团队研发的氨基酸诱导 pH 偏移洗脱策略，解决低 pH 不稳定抗体的 Protein A 层析聚集难题</description>
+    </item>
+    
     <item>
       <title>抗体 Protein A 亲和层析工艺优化 | 文献赏析</title>
-      <link>https://jinbaisheng.github.io/purification-literature-review/posts/protein-a-purification/</link>
+      <link>https://jinbaisheng.github.io/posts/protein-a-purification/</link>
       <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://jinbaisheng.github.io/purification-literature-review/posts/protein-a-purification/</guid>
+      <guid>https://jinbaisheng.github.io/posts/protein-a-purification/</guid>
       <description>深入分析最新抗体纯化文献，从工业纯化工程师视角提炼实用工艺优化建议</description>
     </item>
     

@@ -1,0 +1,1267 @@
+[
+  {
+    "slide_number": 1,
+    "title": "Antibody Charge Variants: Characterization and Control Strategies",
+    "content": [
+      {
+        "type": "text",
+        "text": "Biological Applications Department",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "NanoMicro Technology Company",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "3/26/2026",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Jin Baisheng",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Antibody Charge Variants: Characterization and Control Strategies",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_1_1.png",
+        "path": "/posts/images/charge-variant-control/slide_1_1.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 2,
+    "title": "Charge Heterogeneity is a Critical Quality Attribu",
+    "content": [
+      {
+        "type": "text",
+        "text": "Charge Heterogeneity is a Critical Quality Attribute (CQA)",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Charge variants significantly impact antibody stability, biological activity, and pharmacokinetics.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Charge heterogeneity is a fundamental characteristic of monoclonal antibodies (mAbs) that must be rigorously controlled to ensure therapeutic efficacy and safety. Regulatory agencies, including the FDA and EMA, classify charge variants as Critical Quality Attributes (CQAs), requiring manufacturers to establish robust characterization and control strategies. These variants typically represent 5-30% of the total product and arise from various post-translational modifications (PTMs) during cell culture, purification, or storage.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Attribute",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Impact on Product Quality",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Stability",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Altered charge distribution can lead to increased aggregation or fragmentation.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Activity",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Modifications in the CDR regions may reduce antigen-binding affinity.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Pharmacokinetics",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Changes in pI can significantly affect the serum half-life and clearance rates.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Immunogenicity",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Certain variants may increase the risk of eliciting an immune response in patients.",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_2_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_2_1.jpg",
+        "type": "jpg"
+      }
+    ]
+  },
+  {
+    "slide_number": 3,
+    "title": "Defining Acidic and Basic Peaks in Chromatography",
+    "content": [
+      {
+        "type": "text",
+        "text": "Defining Acidic and Basic Peaks in Chromatography",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Charge variants are classified by their isoelectric point (pI) relative to the main isoform.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "In ion-exchange chromatography, charge variants are identified by their elution position relative to the main antibody isoform. The isoelectric point (pI) determines the net charge of the molecule at a given pH, which in turn dictates its interaction with the stationary phase.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Variant Type",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "pI Relative to Main",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "CEX Elution Order",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Acidic Peak",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Lower",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Earlier Eluting",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Main Peak",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Reference",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Central Peak",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Basic Peak",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Higher",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Later Eluting",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_3_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_3_1.jpg",
+        "type": "jpg"
+      },
+      {
+        "filename": "slide_3_2.png",
+        "path": "/posts/images/charge-variant-control/slide_3_2.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 4,
+    "title": "Deamidation and Sialylation Drive Acidic Variant F",
+    "content": [
+      {
+        "type": "text",
+        "text": "Deamidation and Sialylation Drive Acidic Variant Formation",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Chemical and enzymatic modifications increase the negative charge density of the antibody.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "The formation of acidic variants is primarily driven by modifications that increase the negative charge of the protein. Deamidation, the conversion of Asparagine (Asn) to Aspartic acid (Asp) or isoAspartic acid (isoAsp), is the most common contributor. This process is highly sensitive to environmental factors, particularly alkaline pH and elevated temperatures.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Additionally, the enzymatic addition of sialic acid residues to N-glycans introduces further negative charges, which can significantly influence the molecule's biological half-life and anti-inflammatory properties.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Deamidation Hotspots: Sequences such as Asn-Gly and Asn-Ser in the complementarity-determining regions (CDRs) are particularly susceptible to rapid deamidation.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Figure: Chemical pathway of Asparagine deamidation to Asp and isoAsp isoforms.",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_4_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_4_1.jpg",
+        "type": "jpg"
+      },
+      {
+        "filename": "slide_4_2.png",
+        "path": "/posts/images/charge-variant-control/slide_4_2.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 5,
+    "title": "C-Terminal Lysine Clipping is the Primary Source o",
+    "content": [
+      {
+        "type": "text",
+        "text": "C-Terminal Lysine Clipping is the Primary Source of Basic Variants",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "The loss of positive charge through enzymatic cleavage creates basic heterogeneity.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Basic variants predominantly arise from the incomplete processing of C-terminal lysine residues. During cell culture, endogenous carboxypeptidases remove these positively charged residues from the heavy chains of the antibody. This results in a mixture of species with zero, one, or two C-terminal lysines, creating a characteristic \"basic\" profile in chromatographic assays.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Modification",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Mechanism",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Charge Effect",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Lysine Clipping",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Removal of C-terminal Lys by enzymes.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Loss of Positive Charge",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Succinimide",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Cyclization of Asp/Asn residues.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Altered Distribution",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Glycation",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Reaction with reducing sugars.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Potential Masking",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Aggregation",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Protein association/complexing.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Complex Profiles",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Figure: Enzymatic removal of C-terminal Lysine by Carboxypeptidase B",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_5_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_5_1.jpg",
+        "type": "jpg"
+      },
+      {
+        "filename": "slide_5_2.png",
+        "path": "/posts/images/charge-variant-control/slide_5_2.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 6,
+    "title": "icIEF is the Gold Standard for Charge Variant Quan",
+    "content": [
+      {
+        "type": "text",
+        "text": "icIEF is the Gold Standard for Charge Variant Quantification",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "High-resolution electrophoretic methods provide precise pI-based profiling.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Imaged Capillary Isoelectric Focusing (icIEF) has emerged as the industry standard for the rapid and precise quantification of charge variants. By utilizing whole-column imaging, icIEF eliminates the need for a mobilization step, significantly improving precision and capturing the entire separation profile simultaneously.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Parameter",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "icIEF Performance Standard",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Precision",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Relative Standard Deviation (RSD) ≤ 2.0%",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Resolution",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Resolves variants within 0.02-0.04 pH units",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Linearity",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "R² ≥ 0.99 over the 5-40% variant range",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Compliance",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Recognized by ChP, USP, and EP standards",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Figure: Representative icIEF electropherogram showing pI-based separation.",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_6_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_6_1.jpg",
+        "type": "jpg"
+      },
+      {
+        "filename": "slide_6_2.png",
+        "path": "/posts/images/charge-variant-control/slide_6_2.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 7,
+    "title": "Cation Exchange Chromatography (CEX) Enables Prepa",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cation Exchange Chromatography (CEX) Enables Preparative Separation",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "CEX remains the most practical tool for both analytical monitoring and downstream purification.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Cation Exchange Chromatography (CEX) is the most widely utilized technique for both the analysis and purification of antibody charge variants. By leveraging the interaction between the positively charged protein and negatively charged resin, CEX can separate closely related species using either salt gradients or pH gradients.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Elution Method",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Mechanism and Application",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Salt Gradient Elution",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "The standard approach for routine quality control. It utilizes a linear NaCl gradient to displace bound proteins based on their surface charge density.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "pH Gradient Elution",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Provides superior resolution for complex variant profiles by leveraging the specific pI of each species. Ideal for characterization and high-purity fraction collection.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "CEX-MS Integration",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Online coupling with native mass spectrometry allows for the direct identification of chemical modifications associated with each chromatographic peak in real-time.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "\"Multi-attribute monitoring\" via CEX-MS significantly accelerates the development of robust control strategies for therapeutic antibodies.",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_7_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_7_1.jpg",
+        "type": "jpg"
+      }
+    ]
+  },
+  {
+    "slide_number": 8,
+    "title": "Regulatory Expectations and Quality Specifications",
+    "content": [
+      {
+        "type": "text",
+        "text": "Regulatory Expectations and Quality Specifications",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Specifications must be grounded in clinical experience and process capability (ICH Q6B).",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Establishing appropriate specifications for charge variants is a critical component of the Quality by Design (QbD) framework. According to ICH Q6B guidelines, these limits should be based on the levels observed in clinical trial materials and the demonstrated capability of the manufacturing process. Routine monitoring is required to ensure that the charge profile remains within the established \"design space\" throughout the product's lifecycle.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Variant Category",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Typical Release Specification",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Stability Expectation",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Main Peak",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "60% - 80%",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Not to decrease by >10%",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Acidic Variants",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "10% - 30%",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Not to increase by >10%",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Basic Variants",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "5% - 15%",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Not to increase by >5%",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_8_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_8_1.jpg",
+        "type": "jpg"
+      }
+    ]
+  },
+  {
+    "slide_number": 9,
+    "title": "Upstream and Downstream Process Control Limits",
+    "content": [
+      {
+        "type": "text",
+        "text": "Upstream and Downstream Process Control Limits",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Tight control of environmental parameters minimizes the formation of charge variants.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Upstream Process Controls",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Parameter",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Control Range",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Impact on Charge Variants",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Bioreactor pH",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "6.8 - 7.2",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Critical for controlling deamidation rates of Asn residues.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Temperature",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "32 - 37°C",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Directly affects degradation kinetics and PTM accumulation.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Media Components",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Optimized Cysteine",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Prevents disulfide bond disruption and acidic species formation.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Downstream Process Controls",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Parameter",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Control Strategy",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Impact on Charge Variants",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Processing Temp",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "2 - 8°C",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Minimizes spontaneous chemical degradation during purification.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Residence Time",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Minimize Duration",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Reduces the accumulation of variants in intermediate pools.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Buffer pH/Cond.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Optimized per Step",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Ensures stability and consistent elution profiles across scales.",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_9_1.png",
+        "path": "/posts/images/charge-variant-control/slide_9_1.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 10,
+    "title": "Fraction Collection is the Industry Standard for V",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fraction Collection is the Industry Standard for Variant Removal",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Strategic \"peak cutting\" during CEX purification balances product purity and yield.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "The most common industrial strategy for controlling charge variants is fraction collection (or \"peak cutting\") during the CEX polishing step. By discarding the early-eluting acidic fractions and late-eluting basic fractions, manufacturers can significantly enrich the main isoform. This process requires a careful balance between product purity and step yield, as aggressive cutting can lead to significant material loss.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Parameter",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Optimization Strategy",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Triggering",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Use UV threshold (>5% height) or slope-based detection for precision.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Yield Loss",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Typically 10-20% loss for 50-80% variant removal efficiency.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Robustness",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Validate cut points across the expected range of variant levels.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Automation",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Implement automated fractionators for manufacturing consistency.",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_10_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_10_1.jpg",
+        "type": "jpg"
+      }
+    ]
+  },
+  {
+    "slide_number": 11,
+    "title": "Enzymatic and Multimodal Strategies Enhance Purity",
+    "content": [
+      {
+        "type": "text",
+        "text": "Enzymatic and Multimodal Strategies Enhance Purity",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Targeted enzymatic treatment and advanced resins provide alternative control pathways.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "For products with high levels of basic variants, targeted enzymatic treatment offers a highly specific solution. Additionally, advanced chromatographic resins provide enhanced selectivity for difficult separations where traditional ion-exchange methods may reach their resolution limits.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Strategy",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Mechanism and Efficiency",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Carboxypeptidase B (CpB)",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Enzymatically removes C-terminal lysine and arginine residues. Achieves",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": ">95% removal efficiency",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "of basic variants, effectively converting them into the main isoform.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Multimodal Chromatography",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Combines ion exchange with hydrophobic interactions (HIC). Provides enhanced selectivity for variants with similar pI but different surface hydrophobicity.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Anion Exchange (AEX)",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Frequently employed as a polishing step to specifically target and remove acidic species, host cell proteins, and viral contaminants.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Advanced SMB (Simulated Moving Bed) systems can further improve productivity and variant removal efficiency in continuous manufacturing.",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_11_1.png",
+        "path": "/posts/images/charge-variant-control/slide_11_1.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 12,
+    "title": "Implementation Roadmap for Charge Variant Control",
+    "content": [
+      {
+        "type": "text",
+        "text": "Implementation Roadmap for Charge Variant Control",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "A phased approach ensures robust process development and regulatory compliance.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "A successful charge variant control strategy is implemented in three distinct phases, moving from initial molecular understanding to full-scale manufacturing validation. This structured approach ensures that the final control strategy is both scientifically sound and operationally robust.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Phase",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Key Objectives and Deliverables",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Phase 1: Characterization",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Develop and validate analytical methods (icIEF, CEX). Identify major variants via LC-MS/MS and establish baseline process capability.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Phase 2: Development",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Optimize CEX parameters and fraction collection cut points. Conduct Design of Experiments (DoE) to establish process robustness and design space.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Phase 3: Validation",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Implement the control strategy at manufacturing scale. Validate fraction collection protocols and establish ongoing monitoring and trending programs.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Continuous improvement: Leverage lifecycle data to refine specifications and optimize purification yields.",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": [
+      {
+        "filename": "slide_12_1.jpg",
+        "path": "/posts/images/charge-variant-control/slide_12_1.jpg",
+        "type": "jpg"
+      }
+    ]
+  },
+  {
+    "slide_number": 13,
+    "title": "Case study 1: Finetuning the slope of elution step to removal Acid-Base Peak Separation",
+    "content": [
+      {
+        "type": "text",
+        "text": "Case study 1: Finetuning the slope of elution step to removal Acid-Base Peak Separation",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Effect of Concentration Gradient Slope on Separation of Acid-Base Peaks",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Condition 1. Three-step slope K1=2 5CV, K2=0 3CV, K3=3.9 12CV",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Condition 2. Three-step slope K1=0.6 8CV, K2=6 5CV, K3=1.25 8CV",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "On the NanoGel 50SP HP packing material, the acidic and basic peaks of an antibody were separated under Condition 2, achieving a final recovery rate above 70% with the acidic and basic peaks meeting the required specifications.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Acidic peak",
+        "level": 0
+      }
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "　",
+            "Acid peak %",
+            "Main peak%",
+            "Alkaline peak %",
+            "SEC%"
+          ],
+          [
+            "load",
+            "30",
+            "50",
+            "20",
+            "98.5"
+          ],
+          [
+            "CEX Elu",
+            "25",
+            "62",
+            "13",
+            "99.5"
+          ]
+        ],
+        "row_count": 3,
+        "col_count": 5
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide_13_1.wmf",
+        "path": "/posts/images/charge-variant-control/slide_13_1.wmf",
+        "type": "wmf"
+      },
+      {
+        "filename": "slide_13_2.wmf",
+        "path": "/posts/images/charge-variant-control/slide_13_2.wmf",
+        "type": "wmf"
+      },
+      {
+        "filename": "slide_13_3.png",
+        "path": "/posts/images/charge-variant-control/slide_13_3.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 14,
+    "title": "Case study 2：NanoGel 50SP HP—Removal of Acid-Base Isoforms",
+    "content": [
+      {
+        "type": "text",
+        "text": "Case study 2：NanoGel 50SP HP—Removal of Acid-Base Isoforms",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "NanoGelTM-50SP Cation Exchange Chromatography Salt Concentration Linear Gradient Elution",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Table 2. Comparison of Charge Heterogeneity Content, Purity, and HCP Residue of NanoGelTM-50SP Before and After Purification",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Yield: 70%",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Collection segment results (analytical column BioCore WCX, i.d. 4.6 mm, column height 250mm)",
+        "level": 0
+      }
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "Name",
+            "Before Purification",
+            "After Purification"
+          ],
+          [
+            "Acid peak %",
+            "21.25",
+            "18.34"
+          ],
+          [
+            "Main peak%",
+            "47.50",
+            "70.62"
+          ],
+          [
+            "Alkaline peak %",
+            "31.25",
+            "11.04"
+          ],
+          [
+            "SEC Purity %",
+            "98.21",
+            "99.64"
+          ],
+          [
+            "HCP residual ppm",
+            "85.82",
+            "20.18"
+          ]
+        ],
+        "row_count": 6,
+        "col_count": 3
+      }
+    ],
+    "images": []
+  },
+  {
+    "slide_number": 15,
+    "title": "NanoGel 50SP HP—More Consistent Batch-to-Batch",
+    "content": [
+      {
+        "type": "text",
+        "text": "Overlay Chromatograms of Cation Exchange Chromatography Batch Consistency Study",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Brown: L08W05KC; Blue: L08W07KC; Yellow: L08W11KC; Green: L08W15KC; Red: L08W17KC",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Critical Conductivity Data for Sample Elution",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "Conclusion: The differences in recovery rates of five batches of NanoGel 50SP HP are due to different collection methods, while SEC all reached 98%, CEX without enzymatic digestion was around 55%, and CEX with enzymatic digestion was around 65%, indicating good batch-to-batch stability of this resin.",
+        "level": 0
+      },
+      {
+        "type": "text",
+        "text": "NanoGel 50SP HP—More Consistent Batch-to-Batch",
+        "level": 0
+      }
+    ],
+    "tables": [
+      {
+        "rows": [
+          [
+            "Serial Number",
+            "Batch Number",
+            "A(mS/cm)",
+            "B(mS/cm)"
+          ],
+          [
+            "1",
+            "L08W05KC",
+            "6.38",
+            "10.06"
+          ],
+          [
+            "2",
+            "L08W07KC",
+            "6.18",
+            "10.08"
+          ],
+          [
+            "3",
+            "L08W11KC",
+            "5.9",
+            "9.86"
+          ],
+          [
+            "4",
+            "L08W15KC",
+            "6.33",
+            "10.06"
+          ],
+          [
+            "5",
+            "L08W17KC",
+            "6.01",
+            "10.08"
+          ]
+        ],
+        "row_count": 6,
+        "col_count": 4
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide_15_1.png",
+        "path": "/posts/images/charge-variant-control/slide_15_1.png",
+        "type": "png"
+      }
+    ]
+  },
+  {
+    "slide_number": 16,
+    "title": "Thank you for watching",
+    "content": [
+      {
+        "type": "text",
+        "text": "Thank you for watching",
+        "level": 0
+      }
+    ],
+    "tables": [],
+    "images": []
+  }
+]
