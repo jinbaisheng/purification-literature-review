@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>蛋白纯化 on 蛋白纯化文献赏析</title>
+    <link>https://jinbaisheng.github.io/purification-literature-review/tags/%E8%9B%8B%E7%99%BD%E7%BA%AF%E5%8C%96/</link>
+    <description>Recent content in 蛋白纯化 on 蛋白纯化文献赏析</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jinbaisheng.github.io/purification-literature-review/tags/%E8%9B%8B%E7%99%BD%E7%BA%AF%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抗体 Protein A 亲和层析工艺优化 | 文献赏析</title>
+      <link>https://jinbaisheng.github.io/purification-literature-review/posts/protein-a-purification/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://jinbaisheng.github.io/purification-literature-review/posts/protein-a-purification/</guid>
+      <description>&lt;h2 id=&#34;一研究背景与创新点&#34;&gt;一、研究背景与创新点&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-领域概述&#34;&gt;1.1 领域概述&lt;/h3&gt;&#xA;&lt;p&gt;抗体药物是当前生物制药领域增长最快的品类之一，而 Protein A 亲和层析作为抗体纯化的核心步骤，直接决定了产品的收率、纯度和质量。&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-现有方法的痛点&#34;&gt;1.2 现有方法的痛点&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;高成本&lt;/strong&gt;: Protein A 填料价格昂贵&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;载量受限&lt;/strong&gt;: 动态结合载量（DBC）受限于操作条件&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;收率波动&lt;/strong&gt;: 清洗和洗脱条件优化困难&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;13-本文创新点&#34;&gt;1.3 本文创新点&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;建立了基于 DoE 的工艺参数优化方法&lt;/li&gt;&#xA;&lt;li&gt;明确了关键工艺参数（CPP）与关键质量属性（CQA）的关联&lt;/li&gt;&#xA;&lt;li&gt;提出了创新的在线清洗（CIP）方案&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二工艺流程&#34;&gt;二、工艺流程&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;细胞培养液 → 深滤 → Protein A → 低 pH 灭活 → CEX → AEX → 超滤 → 制剂&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;三纯化效果&#34;&gt;三、纯化效果&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;指标&lt;/th&gt;&#xA;          &lt;th&gt;结果&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;收率&lt;/td&gt;&#xA;          &lt;td&gt;92.5%&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;纯度&lt;/td&gt;&#xA;          &lt;td&gt;99.2%&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;聚集度&lt;/td&gt;&#xA;          &lt;td&gt;1.8%&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;OpenClaw 自动生成 | 2026-03-26&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
