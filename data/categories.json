@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "id": "antibody",
+      "name": "抗体纯化",
+      "icon": "💉",
+      "description": "抗体类药物纯化工艺、抗体片段、ADC偶联物等",
+      "color": "#667eea"
+    },
+    {
+      "id": "recombinant",
+      "name": "重组蛋白纯化",
+      "icon": "🧬",
+      "description": "重组表达蛋白的纯化策略、工艺开发与优化",
+      "color": "#764ba2"
+    },
+    {
+      "id": "blood",
+      "name": "血液制品纯化",
+      "icon": "🩸",
+      "description": "血液制品、凝血因子、白蛋白、免疫球蛋白等",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "vaccine",
+      "name": "疫苗纯化",
+      "icon": "💉",
+      "description": "病毒疫苗、亚单位疫苗、mRNA疫苗等纯化工艺",
+      "color": "#27ae60"
+    },
+    {
+      "id": "media",
+      "name": "竞品填料更新",
+      "icon": "📦",
+      "description": "层析填料、膜包、过滤产品等竞品动态与测评",
+      "color": "#f39c12"
+    },
+    {
+      "id": "other",
+      "name": "其他",
+      "icon": "📚",
+      "description": "纯化相关技术、仪器设备、学术会议等",
+      "color": "#95a5a6"
+    }
+  ]
+}

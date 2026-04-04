@@ -4,7 +4,7 @@ date: 2026-03-26
 draft: false
 author: "Baisheng Jin"
 tags: ["蛋白纯化", "抗体", "Protein A", "亲和层析"]
-categories: ["文献赏析"]
+categories: ["antibody"]
 description: "深入分析最新抗体纯化文献，从工业纯化工程师视角提炼实用工艺优化建议"
 ---
 

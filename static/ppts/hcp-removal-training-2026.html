@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCP去除策略与检测方法培训（2026）</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f7fa;
+        }
+        
+        /* 返回导航站按钮 */
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .home-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+            background: linear-gradient(135deg, #7a8ef5, #8a5db5);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            margin-top: 60px;
+        }
+        .header h1 { font-size: 2.2em; margin-bottom: 15px; }
+        .header .meta { opacity: 0.9; font-size: 0.95em; }
+        .header .tags { margin-top: 15px; }
+        .header .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+        }
+        
+        /* TOC */
+        .toc {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .toc h2 { font-size: 1.3em; margin-bottom: 15px; color: #2c3e50; }
+        .toc ul { list-style: none; }
+        .toc li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .toc li:last-child { border-bottom: none; }
+        .toc a { color: #667eea; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        
+        /* Slide */
+        .slide {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .slide-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        .slide-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .slide-title { font-size: 1.4em; color: #2c3e50; }
+        
+        /* Content */
+        .content h3 { color: #2c3e50; margin: 20px 0 10px; font-size: 1.2em; }
+        .content ul { padding-left: 25px; margin: 10px 0; }
+        .content li { margin: 8px 0; }
+        .content strong { color: #667eea; }
+        
+        /* Table */
+        .table-wrapper { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+        td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f8f9fa; }
+        
+        /* Image */
+        .slide-image { margin: 20px 0; text-align: center; }
+        .slide-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .image-caption { color: #666; font-size: 0.85em; margin-top: 8px; }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s;
+        }
+        .back-to-top:hover { transform: translateY(-3px); text-decoration: none; color: white; }
+        
+        @media (max-width: 768px) {
+            .home-link {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+            .header { margin-top: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回导航站按钮 -->
+    <a href="/" class="home-link" title="返回导航站">
+        <span>🏠</span>
+        <span>返回导航站</span>
+    </a>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>HCP去除策略与检测方法培训（2026）</h1>
+            <div class="meta">
+                <span>📅 2026-04-04</span> &nbsp;|&nbsp;
+                <span>👤 纳微科技</span> &nbsp;|&nbsp;
+                <span>💉 抗体纯化</span>
+            </div>
+            <div class="tags">
+                <span class="tag">HCP</span>
+                <span class="tag">蛋白纯化</span>
+                <span class="tag">层析工艺</span>
+                <span class="tag">培训资料</span>
+            </div>
+        </header>
+        
+        <!-- TOC -->
+        <nav class="toc">
+            <h2>📑 目录</h2>
+            <ul>
+                <li><a href="#slide-1">第1页：目录</a></li>
+                <li><a href="#slide-2">第2页：HCP背景：来源与成分分析</a></li>
+                <li><a href="#slide-3">第3页：HCP对药物质量属性及安全性影响</a></li>
+                <li><a href="#slide-4">第4页：HCP检测方法盘点</a></li>
+                <li><a href="#slide-5">第5页：各检测方法优缺点对比</a></li>
+                <li><a href="#slide-6">第6页：HCP去除策略概览</a></li>
+                <li><a href="#slide-7">第7页：Protein A 亲和层析</a></li>
+                <li><a href="#slide-8">第8页：离子交换层析（IEX）</a></li>
+                <li><a href="#slide-9">第9页：混合模式层析</a></li>
+                <li><a href="#slide-10">第10页：纳微Capto Core 700</a></li>
+                <li><a href="#slide-11">第11页：纳微UniGel系列</a></li>
+                <li><a href="#slide-12">第12页：纳微案例分享</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Slides -->
+        <section class="slide" id="slide-1">
+            <div class="slide-header">
+                <div class="slide-number">1</div>
+                <h2 class="slide-title">目录</h2>
+            </div>
+            <div class="content">
+                <p><strong>HCP去除策略介绍</strong></p>
+                <ul><li>纳微案例</li></ul>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-2">
+            <div class="slide-header">
+                <div class="slide-number">2</div>
+                <h2 class="slide-title">HCP背景：来源与成分分析</h2>
+            </div>
+            <div class="content">
+                <p><strong>主要来源：</strong></p>
+                <ul><li>生产细胞（如CHO细胞）的内源性蛋白，通过主动分泌或细胞裂解释放。</li></ul>
+                <p><strong>异质性：</strong></p>
+                <ul><li>包含数千种具有不同分子量、等电点（pI）和疏水性的蛋白。</li></ul>
+                <p><strong>关键成分：</strong></p>
+                <ul><li>蛋白酶（如Cathepsin D）、伴侣蛋白（如HSP70/90）、脂酶（如LPL）等</li></ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_2_1.jpg" alt="HCP来源与成分">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-3">
+            <div class="slide-header">
+                <div class="slide-number">3</div>
+                <h2 class="slide-title">HCP对药物质量属性及安全性影响</h2>
+            </div>
+            <div class="content">
+                <ul><li><strong>安全性</strong>：潜在的免疫原性（如PLBL2引起免疫反应）和生物学活性。</li></ul>
+                <ul><li><strong>产品质量</strong>：诱导抗体降解/片段化（蛋白酶作用）或促进聚集。</li></ul>
+                <ul><li><strong>稳定性</strong>：降解制剂辅料（如降解聚山梨酯PS-80，导致微粒形成）。</li></ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_3_1.jpg" alt="HCP影响1">
+                <img src="/posts/images/hcp-training-2026/slide_3_2.jpg" alt="HCP影响2">
+                <img src="/posts/images/hcp-training-2026/slide_3_3.jpg" alt="HCP影响3">
+                <img src="/posts/images/hcp-training-2026/slide_3_4.jpg" alt="HCP影响4">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-4">
+            <div class="slide-header">
+                <div class="slide-number">4</div>
+                <h2 class="slide-title">HCP检测方法盘点：传统与现代手段对比</h2>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_4_1.jpg" alt="检测方法对比">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-5">
+            <div class="slide-header">
+                <div class="slide-number">5</div>
+                <h2 class="slide-title">各检测方法优缺点对比</h2>
+            </div>
+            <div class="content">
+                <ul><li>企业通常采用ELISA进行常规监控，而用MS识别"持久性"和"高风险"HCP</li></ul>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-6">
+            <div class="slide-header">
+                <div class="slide-number">6</div>
+                <h2 class="slide-title">HCP去除策略概览</h2>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_6_1.jpg" alt="HCP去除策略">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-7">
+            <div class="slide-header">
+                <div class="slide-number">7</div>
+                <h2 class="slide-title">Protein A 亲和层析</h2>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_7_1.jpg" alt="Protein A 层析">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-8">
+            <div class="slide-header">
+                <div class="slide-number">8</div>
+                <h2 class="slide-title">离子交换层析（IEX）</h2>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_8_1.jpg" alt="离子交换层析">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-9">
+            <div class="slide-header">
+                <div class="slide-number">9</div>
+                <h2 class="slide-title">混合模式层析</h2>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_9_1.jpg" alt="混合模式层析">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-10">
+            <div class="slide-header">
+                <div class="slide-number">10</div>
+                <h2 class="slide-title">纳微Capto Core 700</h2>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_10_1.jpg" alt="Capto Core 700">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-11">
+            <div class="slide-header">
+                <div class="slide-number">11</div>
+                <h2 class="slide-title">纳微UniGel系列</h2>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_11_1.jpg" alt="UniGel系列">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-12">
+            <div class="slide-header">
+                <div class="slide-number">12</div>
+                <h2 class="slide-title">纳微案例分享</h2>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/hcp-training-2026/slide_12_1.jpg" alt="案例分享">
+            </div>
+        </section>
+        
+        <!-- 更多幻灯片内容省略，可在实际文件中查看完整版 -->
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                <a href="/">🏠 返回导航站</a> |
+                <a href="/categories/antibody/">💉 返回抗体纯化</a> |
+                <a href="/posts/">📚 返回文献列表</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 0.85em;">
+                本页面最后更新于 2026-04-04 | 由纳微科技提供
+            </p>
+        </footer>
+    </div>
+    
+    <a href="#" class="back-to-top" title="返回顶部">↑</a>
+</body>
+</html>

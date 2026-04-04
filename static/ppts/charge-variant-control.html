@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抗体电荷异构体：表征与控制策略</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f7fa;
+        }
+        
+        /* 返回导航站按钮 */
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .home-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+            text-decoration: none;
+            color: white;
+        }
+        
+        /* 返回列表按钮 */
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 200px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.5);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 100px 20px 40px; }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .header .meta { opacity: 0.9; font-size: 0.95em; }
+        .header .tags { margin-top: 10px; }
+        .header .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+        }
+        
+        /* Category Tags */
+        .category-section {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .category-section h3 {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .category-tag {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .category-tag.qa {
+            background: #fee;
+            color: #c0392b;
+        }
+        .category-tag.qa:hover {
+            background: #e74c3c;
+            color: white;
+        }
+        .category-tag.type {
+            background: #efe;
+            color: #27ae60;
+        }
+        .category-tag.type:hover {
+            background: #27ae60;
+            color: white;
+        }
+        
+        /* TOC */
+        .toc {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .toc h2 { font-size: 1.3em; margin-bottom: 15px; color: #2c3e50; }
+        .toc ul { list-style: none; }
+        .toc li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .toc li:last-child { border-bottom: none; }
+        .toc a { color: #667eea; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        
+        /* Slide */
+        .slide {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .slide-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        .slide-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .slide-title { font-size: 1.3em; color: #2c3e50; }
+        
+        /* Content */
+        .content h3 { color: #2c3e50; margin: 20px 0 10px; font-size: 1.1em; }
+        .content ul { padding-left: 25px; margin: 10px 0; }
+        .content li { margin: 8px 0; }
+        .content strong { color: #667eea; }
+        .content p { margin: 10px 0; }
+        
+        /* Table */
+        .table-wrapper { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+        td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f8f9fa; }
+        
+        /* Image */
+        .slide-image { margin: 20px 0; text-align: center; }
+        .slide-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .image-caption { color: #666; font-size: 0.85em; margin-top: 8px; }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s;
+        }
+        .back-to-top:hover { transform: translateY(-3px); text-decoration: none; color: white; }
+        
+        @media (max-width: 768px) {
+            .home-link, .back-link {
+                top: 10px;
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+            .home-link { left: 10px; }
+            .back-link { left: 130px; }
+            .container { padding-top: 80px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回导航站按钮 -->
+    <a href="/" class="home-link" title="返回导航站">
+        <span>🏠</span>
+        <span>返回导航站</span>
+    </a>
+    
+    <!-- 返回列表按钮 -->
+    <a href="/categories/antibody/" class="back-link" title="返回抗体纯化">
+        <span>←</span>
+        <span>抗体纯化</span>
+    </a>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📚 抗体电荷异构体：表征与控制策略</h1>
+            <div class="meta">
+                <span>📅 2026-04-04</span> &nbsp;|&nbsp;
+                <span>👤 技术文献</span> &nbsp;|&nbsp;
+                <span>💉 抗体纯化</span>
+            </div>
+            <div class="tags">
+                <span class="tag">电荷异构体</span>
+                <span class="tag">CQA</span>
+                <span class="tag">质量控制</span>
+                <span class="tag">层析工艺</span>
+            </div>
+        </header>
+        
+        <!-- Category Tags -->
+        <div class="category-section">
+            <h3>🏷️ 常见问题栏</h3>
+            <div class="category-tags">
+                <a href="#" class="category-tag qa">电荷异构体</a>
+                <a href="/tags/hcp/" class="category-tag qa">HCP</a>
+                <a href="#" class="category-tag qa">聚集体去除</a>
+                <a href="#" class="category-tag qa">配基脱落</a>
+                <a href="#" class="category-tag qa">颜色问题</a>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h3>🧬 结构分类栏</h3>
+            <div class="category-tags">
+                <a href="#" class="category-tag type">单抗</a>
+                <a href="#" class="category-tag type">双抗</a>
+                <a href="#" class="category-tag type">ADC</a>
+                <a href="#" class="category-tag type">AOC</a>
+                <a href="#" class="category-tag type">APC</a>
+                <a href="#" class="category-tag type">Fragment antibody</a>
+            </div>
+        </div>
+        
+        <!-- TOC -->
+        <nav class="toc">
+            <h2>📑 目录</h2>
+            <ul>
+                <li><a href="#slide-1">第1页：Antibody Charge Variants</a></li>
+                <li><a href="#slide-2">第2页：Charge Heterogeneity is a Critical Quality Attribute</a></li>
+                <li><a href="#slide-3">第3页：Defining Acidic and Basic Peaks</a></li>
+                <li><a href="#slide-4">第4页：Deamidation and Sialylation</a></li>
+                <li><a href="#slide-5">第5页：C-Terminal Lysine Clipping</a></li>
+                <li><a href="#slide-6">第6页：Oxidation and Glycation</a></li>
+                <li><a href="#slide-7">第7页：Glycosylation and Sialic Acid</a></li>
+                <li><a href="#slide-8">第8页：Conformation Changes</a></li>
+                <li><a href="#slide-9">第9页：Control Strategies Overview</a></li>
+                <li><a href="#slide-10">第10页：Cell Culture Optimization</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Slides -->
+
+        <section class="slide" id="slide-1">
+            <div class="slide-header">
+                <div class="slide-number">1</div>
+                <h2 class="slide-title">Antibody Charge Variants: Characterization and Control Strategies</h2>
+            </div>
+            <div class="content">
+                <p><strong>Overview of Charge Variant Analysis</strong></p>
+                <ul>
+                    <li>Charge variants are critical quality attributes (CQAs) for monoclonal antibodies</li>
+                    <li>Understanding the root causes enables effective control strategies</li>
+                    <li>Multiple analytical techniques are required for comprehensive characterization</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_1_1.jpg" alt="Charge Variants Overview">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-2">
+            <div class="slide-header">
+                <div class="slide-number">2</div>
+                <h2 class="slide-title">Charge Heterogeneity is a Critical Quality Attribute</h2>
+            </div>
+            <div class="content">
+                <p><strong>Why Charge Variants Matter:</strong></p>
+                <ul>
+                    <li>Impact on drug product stability and efficacy</li>
+                    <li>Potential immunogenicity concerns</li>
+                    <li>Regulatory agencies require thorough characterization</li>
+                    <li>Changes in charge profile may indicate process deviations</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_2_1.jpg" alt="CQA Importance">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-3">
+            <div class="slide-header">
+                <div class="slide-number">3</div>
+                <h2 class="slide-title">Defining Acidic and Basic Peaks in Chromatography</h2>
+            </div>
+            <div class="content">
+                <p><strong>Ion Exchange Chromatography (IEX) Analysis:</strong></p>
+                <ul>
+                    <li>Acidic variants: elute before main peak (lower pI)</li>
+                    <li>Main peak: native isoform</li>
+                    <li>Basic variants: elute after main peak (higher pI)</li>
+                </ul>
+                <p><strong>Key Factors:</strong></p>
+                <ul>
+                    <li>Column selection (CEX vs AEX)</li>
+                    <li>Gradient optimization</li>
+                    <li>Buffer pH and ionic strength</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_3_1.jpg" alt="IEX Chromatography">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-4">
+            <div class="slide-header">
+                <div class="slide-number">4</div>
+                <h2 class="slide-title">Deamidation and Sialylation Drive Acidic Variant Formation</h2>
+            </div>
+            <div class="content">
+                <p><strong>Deamidation (Asparagine → Aspartic Acid):</strong></p>
+                <ul>
+                    <li>Spontaneous deamidation of Asn residues</li>
+                    <li>Particularly in sequence motifs: Asn-Gly, Asn-Ser</li>
+                    <li>Accelerated under alkaline conditions</li>
+                    <li>Results in acidic shift</li>
+                </ul>
+                <p><strong>Sialylation:</strong></p>
+                <ul>
+                    <li>Addition of sialic acid residues</li>
+                    <li>Increases negative charge</li>
+                    <li>Cell culture conditions affect sialylation levels</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_4_1.jpg" alt="Deamidation and Sialylation">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-5">
+            <div class="slide-header">
+                <div class="slide-number">5</div>
+                <h2 class="slide-title">C-Terminal Lysine Clipping is the Primary Source of Basic Variants</h2>
+            </div>
+            <div class="content">
+                <p><strong>Mechanism:</strong></p>
+                <ul>
+                    <li>Carboxypeptidase activity removes C-terminal Lys</li>
+                    <li>Incomplete processing leads to +1, +2 Lys variants</li>
+                    <li>More prominent in basic region of IEX chromatogram</li>
+                </ul>
+                <p><strong>Control Strategies:</strong></p>
+                <ul>
+                    <li>Optimize cell culture conditions</li>
+                    <li>Use carboxypeptidase inhibitors</li>
+                    <li>Consider enzymatic processing during purification</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_5_1.jpg" alt="C-terminal Lysine">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-6">
+            <div class="slide-header">
+                <div class="slide-number">6</div>
+                <h2 class="slide-title">Oxidation and Glycation Contribute to Charge Heterogeneity</h2>
+            </div>
+            <div class="content">
+                <p><strong>Methionine Oxidation:</strong></p>
+                <ul>
+                    <li>Oxidation of Met residues (especially Met252, Met428)</li>
+                    <li>Causes acidic shift</li>
+                    <li>Accelerated by light, metals, and peroxide</li>
+                </ul>
+                <p><strong>Glycation:</strong></p>
+                <ul>
+                    <li>Non-enzymatic attachment of glucose to Lys residues</li>
+                    <li>Results in basic variant formation</li>
+                    <li>Control through media optimization</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_6_1.jpg" alt="Oxidation and Glycation">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-7">
+            <div class="slide-header">
+                <div class="slide-number">7</div>
+                <h2 class="slide-title">Glycosylation Patterns Affect Charge Profile</h2>
+            </div>
+            <div class="content">
+                <p><strong>Glycan Structure Impact:</strong></p>
+                <ul>
+                    <li>Sialic acid content directly affects charge</li>
+                    <li>G0F, G1F, G2F glycoforms have different pI values</li>
+                    <li>High mannose content increases acidic variants</li>
+                </ul>
+                <p><strong>Control Through:</strong></p>
+                <ul>
+                    <li>Cell line selection</li>
+                    <li>Culture media optimization</li>
+                    <li>Process parameter adjustments</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_7_1.jpg" alt="Glycosylation">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-8">
+            <div class="slide-header">
+                <div class="slide-number">8</div>
+                <h2 class="slide-title">Conformational Changes and Aggregates</h2>
+            </div>
+            <div class="content">
+                <p><strong>Structural Modifications:</strong></p>
+                <ul>
+                    <li>Denaturation can expose charged residues</li>
+                    <li>Surface charge heterogeneity in aggregates</li>
+                    <li>Disulfide bond shuffling affects charge profile</li>
+                </ul>
+                <p><strong>Impact on Product Quality:</strong></p>
+                <ul>
+                    <li>Stability concerns</li>
+                    <li>Immunogenicity risk</li>
+                    <li>PK/PD alterations</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_8_1.jpg" alt="Conformational Changes">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-9">
+            <div class="slide-header">
+                <div class="slide-number">9</div>
+                <h2 class="slide-title">Control Strategies Overview</h2>
+            </div>
+            <div class="content">
+                <p><strong>Process Control Points:</strong></p>
+                <ul>
+                    <li>Cell culture: pH, temperature, duration</li>
+                    <li>Purification: capture, polish, viral inactivation</li>
+                    <li>Formulation: buffer composition, pH stability</li>
+                </ul>
+                <p><strong>Analytical Monitoring:</strong></p>
+                <ul>
+                    <li>IEX-HPLC for charge variant profiling</li>
+                    <li>CEX for acidic/basic separation</li>
+                    <li>cIEF for isoelectric point determination</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_9_1.jpg" alt="Control Strategies">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-10">
+            <div class="slide-header">
+                <div class="slide-number">10</div>
+                <h2 class="slide-title">Cell Culture Optimization for Charge Variant Control</h2>
+            </div>
+            <div class="content">
+                <p><strong>Key Parameters:</strong></p>
+                <ul>
+                    <li>pH: optimal range 6.8-7.2</li>
+                    <li>Temperature: 31-37°C affects glycan profile</li>
+                    <li>Culture duration: longer = more modifications</li>
+                    <li>Nutrient feeding strategy</li>
+                </ul>
+                <p><strong>Media Components:</strong></p>
+                <ul>
+                    <li>Glucose levels affect glycation</li>
+                    <li>Amino acid supplementation</li>
+                    <li>Trace elements and vitamins</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_10_1.jpg" alt="Cell Culture Optimization">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-11">
+            <div class="slide-header">
+                <div class="slide-number">11</div>
+                <h2 class="slide-title">Downstream Processing Impact</h2>
+            </div>
+            <div class="content">
+                <p><strong>Purification Strategies:</strong></p>
+                <ul>
+                    <li>Protein A elution pH affects charge profile</li>
+                    <li>Low pH viral inactivation may cause modifications</li>
+                    <li>IEX chromatography for polishing</li>
+                </ul>
+                <p><strong>Process Robustness:</strong></p>
+                <ul>
+                    <li>Design space definition</li>
+                    <li>Control strategy implementation</li>
+                    <li>Continuous monitoring</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_11_1.jpg" alt="Downstream Processing">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-12">
+            <div class="slide-header">
+                <div class="slide-number">12</div>
+                <h2 class="slide-title">Analytical Methods for Characterization</h2>
+            </div>
+            <div class="content">
+                <p><strong>Charge Variant Analysis:</strong></p>
+                <ul>
+                    <li>CEX-HPLC: quantitative charge profiling</li>
+                    <li>cIEF: isoelectric point determination</li>
+                    <li>iCIEF: high-resolution separation</li>
+                </ul>
+                <p><strong>Peptide Mapping:</strong></p>
+                <ul>
+                    <li>LC-MS/MS for modification identification</li>
+                    <li>Mapping deamidation, oxidation sites</li>
+                    <li>Relative quantification</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_12_1.jpg" alt="Analytical Methods">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-13">
+            <div class="slide-header">
+                <div class="slide-number">13</div>
+                <h2 class="slide-title">Forced Degradation Studies</h2>
+            </div>
+            <div class="content">
+                <p><strong>Stress Conditions:</strong></p>
+                <ul>
+                    <li>Oxidative stress (H2O2, light)</li>
+                    <li>Thermal stress (elevated temperature)</li>
+                    <li>pH stress (acidic and basic)</li>
+                    <li>Agitation stress (stirring, shaking)</li>
+                </ul>
+                <p><strong>Analysis:</strong></p>
+                <ul>
+                    <li>Accelerated charge variant formation</li>
+                    <li>Mechanism elucidation</li>
+                    <li>Forced degradation profiles</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_13_1.jpg" alt="Forced Degradation">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-14">
+            <div class="slide-header">
+                <div class="slide-number">14</div>
+                <h2 class="slide-title">Stability and Shelf Life Implications</h2>
+            </div>
+            <div class="content">
+                <p><strong>Charge Variant Impact:</strong></p>
+                <ul>
+                    <li>Acidic variants: may affect stability</li>
+                    <li>Basic variants: potential biological activity changes</li>
+                    <li>Profile shifts during storage</li>
+                </ul>
+                <p><strong>Shelf Life Determination:</strong></p>
+                <ul>
+                    <li>Real-time and accelerated stability</li>
+                    <li>Charge variant monitoring over time</li>
+                    <li>Specification setting</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_14_1.jpg" alt="Stability">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-15">
+            <div class="slide-header">
+                <div class="slide-number">15</div>
+                <h2 class="slide-title">Regulatory Considerations</h2>
+            </div>
+            <div class="content">
+                <p><strong>Quality Standards:</strong></p>
+                <ul>
+                    <li>ICH Q6B: characterization requirements</li>
+                    <li>Charge variants as CQAs</li>
+                    <li>Risk assessment approach</li>
+                </ul>
+                <p><strong>Control Strategy:</strong></p>
+                <ul>
+                    <li>Process characterization studies</li>
+                    <li>Control strategy documentation</li>
+                    <li>Lifecycle management</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_15_1.jpg" alt="Regulatory">
+            </div>
+        </section>
+
+        <section class="slide" id="slide-16">
+            <div class="slide-header">
+                <div class="slide-number">16</div>
+                <h2 class="slide-title">Summary and Key Takeaways</h2>
+            </div>
+            <div class="content">
+                <p><strong>Key Points:</strong></p>
+                <ul>
+                    <li>Charge variants are critical quality attributes</li>
+                    <li>Multiple mechanisms contribute to heterogeneity</li>
+                    <li>Comprehensive analytical characterization required</li>
+                    <li>Process control enables consistent product quality</li>
+                </ul>
+                <p><strong>Best Practices:</strong></p>
+                <ul>
+                    <li>Early characterization during development</li>
+                    <li>Link process parameters to product quality</li>
+                    <li>Implement robust control strategy</li>
+                    <li>Monitor throughout product lifecycle</li>
+                </ul>
+            </div>
+            <div class="slide-image">
+                <img src="/posts/images/charge-variant-control/slide_16_1.jpg" alt="Summary">
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                <a href="/">🏠 返回导航站</a> |
+                <a href="/categories/antibody/">💉 返回抗体纯化</a> |
+                <a href="/posts/">📚 返回文献列表</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 0.85em;">
+                本页面最后更新于 2026-04-04
+            </p>
+        </footer>
+    </div>
+    
+    <a href="#" class="back-to-top" title="返回顶部">↑</a>
+</body>
+</html>

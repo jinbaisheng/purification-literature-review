@@ -1,21 +1,29 @@
-baseURL = "https://jinbaisheng.github.io/purification-literature-review/"
+baseURL = "https://jinbaisheng.github.io/"
 languageCode = "zh-cn"
 title = "蛋白纯化文献赏析"
 theme = "PaperMod"
 buildDrafts = true
 
 [params]
-  description = "蛋白纯化领域最新文献赏析与综述"
+  description = "蛋白纯化领域最新文献赏析与综述 | 每周更新"
   keywords = ["蛋白纯化", "文献综述", "层析技术", "抗体纯化"]
   author = "Baisheng Jin"
-  images = ["images/og-image.jpg"]
   env = "development"
-  SocialIcons = []
   
 [params.paperMod]
   homeInfoParams = """
-    蛋白纯化文献赏析
-    每周更新 | 深入分析 | 纯化灵感
+    ## 📚 蛋白纯化文献赏析
+    
+    专注于抗体纯化工艺优化、层析技术创新、质量控制策略
+    
+    ### 近期更新
+    - 氨基酸诱导 pH 偏移策略
+    - Fc 段工程化改造技术
+    - Protein A 工艺优化
+    
+    ---
+    
+    [📖 浏览全部文献赏析](/posts/)
   """
   socialIcons = []
 
@@ -27,5 +35,6 @@ buildDrafts = true
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-[social]
-  twitter = ""
+# 禁用首页的列表功能，使用自定义布局
+[frontmatter]
+  date = ["date", "publishDate", "lastmod"]

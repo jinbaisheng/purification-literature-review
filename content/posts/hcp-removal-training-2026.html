@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCP去除策略与检测方法培训（2026）</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f5f7fa;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+        .header h1 { font-size: 2.2em; margin-bottom: 15px; }
+        .header .meta { opacity: 0.9; font-size: 0.95em; }
+        .header .tags { margin-top: 15px; }
+        .header .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+        }
+        
+        .toc {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .toc h2 { font-size: 1.3em; margin-bottom: 15px; color: #2c3e50; }
+        .toc ul { list-style: none; }
+        .toc li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .toc li:last-child { border-bottom: none; }
+        .toc a { color: #667eea; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        
+        .slide {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .slide-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        .slide-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .slide-title { font-size: 1.4em; color: #2c3e50; }
+        
+        .content h3 { color: #2c3e50; margin: 20px 0 10px; font-size: 1.2em; }
+        .content ul { padding-left: 25px; margin: 10px 0; }
+        .content li { margin: 8px 0; }
+        .content strong { color: #667eea; }
+        
+        .table-wrapper { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+        td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f8f9fa; }
+        
+        .slide-image { margin: 20px 0; text-align: center; }
+        .slide-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .image-caption { color: #666; font-size: 0.85em; margin-top: 8px; }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s;
+        }
+        .back-to-top:hover { transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>HCP去除策略与检测方法培训（2026）</h1>
+            <div class="meta">
+                <span>📅 2026-04-04</span> &nbsp;|&nbsp;
+                <span>👤 纳微科技</span> &nbsp;|&nbsp;
+                <span>💉 抗体纯化</span>
+            </div>
+            <div class="tags">
+                <span class="tag">HCP</span>
+                <span class="tag">蛋白纯化</span>
+                <span class="tag">层析工艺</span>
+                <span class="tag">培训资料</span>
+            </div>
+        </header>
+        
+        <nav class="toc">
+            <h2>📑 目录</h2>
+            <ul>
+                <li><a href="#slide-1">第1页：目录</a></li>
+                <li><a href="#slide-2">第2页：HCP背景：来源与成分分析</a></li>
+                <li><a href="#slide-3">第3页：HCP对药物质量属性及安全性影响</a></li>
+                <li><a href="#slide-4">第4页：HCP检测方法盘点：传统与现代手段对比</a></li>
+                <li><a href="#slide-5">第5页：各检测方法优缺点对比</a></li>
+                <li><a href="#slide-6">第6页：企业控制HCP标准与监管要求分析</a></li>
+                <li><a href="#slide-7">第7页：HCP去除策略1：收获液杂质沉淀技术</a></li>
+                <li><a href="#slide-8">第8页：HCP去除策略2：收获液澄清中的深层过滤去除效果</a></li>
+                <li><a href="#slide-9">第9页：HCP去除策略：ProteinA层析过程</a></li>
+                <li><a href="#slide-10">第10页：Protein A 过程淋洗策略详述（淋洗剂）</a></li>
+                <li><a href="#slide-11">第11页：淋洗条件数据比较</a></li>
+                <li><a href="#slide-12">第12页：病毒灭活进一步处理：中和诱导沉淀策略</a></li>
+                <li><a href="#slide-13">第13页：灭活病毒后深层过滤效果</a></li>
+                <li><a href="#slide-14">第14页：灭活后辛酸沉淀与PEG沉淀比较</a></li>
+                <li><a href="#slide-15">第15页：精纯策略1：AEX阴离子交换层析</a></li>
+                <li><a href="#slide-16">第16页：精纯策略2：复合模式填料（mixed-mode）</a></li>
+                <li><a href="#slide-17">第17页：精纯策略3：高性能超滤HPTFF与新手段展望</a></li>
+                <li><a href="#slide-18">第18页：主要HCP去除步骤性能对比</a></li>
+                <li><a href="#slide-19">第19页：总结：文件下游HCP控制推荐</a></li>
+                <li><a href="#slide-20">第20页：HCP去除策略新技术展望：膜、新型配体、基因编辑前沿趋势</a></li>
+                <li><a href="#slide-21">第21页：常见HCP蛋白种类</a></li>
+                <li><a href="#slide-22">第22页：某FC融合蛋白项目HCP去除:case 1</a></li>
+                <li><a href="#slide-23">第23页：某FC融合蛋白HCP去除:case 2</a></li>
+                <li><a href="#slide-24">第24页：亲和阶段HCP去除尝试</a></li>
+                <li><a href="#slide-25">第25页：精纯步骤HCP去除条件考察</a></li>
+                <li><a href="#slide-26">第26页：谢谢观看</a></li>
+            </ul>
+        </nav>
+        
+
+        <section class="slide" id="slide-1">
+            <div class="slide-header">
+                <div class="slide-number">1</div>
+                <h2 class="slide-title">目录</h2>
+            </div>
+            <div class="content">
+                <p><strong>HCP去除策略介绍</strong></p>
+                <p><strong>纳微案例</strong></p>
+                <p><strong>1</strong></p>
+                <p><strong>2</strong></p>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-2">
+            <div class="slide-header">
+                <div class="slide-number">2</div>
+                <h2 class="slide-title">HCP背景：来源与成分分析</h2>
+            </div>
+            <div class="content">
+                <p><strong>主要来源：</strong></p>
+                <p><strong>生产细胞（如CHO细胞）的内源性蛋白，   通过主动分泌或细胞裂解释放。</strong></p>
+                <p><strong>异质性：</strong></p>
+                <p><strong>包含数千种具有不同分子量、等电点（pI）和疏水性的蛋白。</strong></p>
+                <p><strong>关键成分：</strong></p>
+                <p><strong>蛋白酶（如Cathepsin D）、伴侣蛋白（如HSP70/90）、脂酶（如LPL）等</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_2_1.jpg" alt="HCP背景：来源与成分分析">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-3">
+            <div class="slide-header">
+                <div class="slide-number">3</div>
+                <h2 class="slide-title">HCP对药物质量属性及安全性影响</h2>
+            </div>
+            <div class="content">
+                <p><strong>安全性</strong></p>
+                <p><strong>潜在的免疫原性（如PLBL2引起免疫反应）和生物学活性。</strong></p>
+                <p><strong>产品质量</strong></p>
+                <p><strong>诱导抗体降解/片段化（蛋白酶作用）或促进聚集。</strong></p>
+                <p><strong>稳定性</strong></p>
+                <p><strong>降解制剂辅料（如降解聚山梨酯PS-80，导致微粒形成）。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_3_1.jpg" alt="HCP对药物质量属性及安全性影响">
+                </div>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_3_2.jpg" alt="HCP对药物质量属性及安全性影响">
+                </div>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_3_3.jpg" alt="HCP对药物质量属性及安全性影响">
+                </div>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_3_4.jpg" alt="HCP对药物质量属性及安全性影响">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-4">
+            <div class="slide-header">
+                <div class="slide-number">4</div>
+                <h2 class="slide-title">HCP检测方法盘点：传统与现代手段对比</h2>
+            </div>
+            <div class="content">
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_4_1.jpg" alt="HCP检测方法盘点：传统与现代手段对比">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-5">
+            <div class="slide-header">
+                <div class="slide-number">5</div>
+                <h2 class="slide-title">各检测方法优缺点对比</h2>
+            </div>
+            <div class="content">
+                <p><strong>企业通常采用ELISA进行常规监控，而用MS识别“持久性”和“高风险”HCP</strong></p>
+                <div class="table-wrapper"><table>
+                    <thead><tr><th>检测方法</th><th>核心优点</th><th>核心缺点</th><th>检出限 (LOD)</th></tr></thead><tbody>
+                    <tr><td>ELISA</td><td>操作简便、灵敏度高、高通量、行业标准</td><td>无法识别种类、依赖特定抗体、抗体覆盖度（Coverage）有限</td><td>~1 ppm </td></tr>
+                    <tr><td>LC-MS/MS</td><td>可定量且定性、无需预先制备抗体、能识别特定高风险蛋白</td><td>仪器昂贵、数据分析复杂、动态范围有限（受主成分抗体干扰）</td><td>1 - 50 ppm</td></tr>
+                    <tr><td>2D-GE</td><td>可视化蛋白分布、直观展示抗体覆盖度</td><td>耗时费力、通量低、对低丰度蛋白不敏感</td><td>μg 级</td></tr>
+                </tbody></table></div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-6">
+            <div class="slide-header">
+                <div class="slide-number">6</div>
+                <h2 class="slide-title">企业控制HCP标准与监管要求分析</h2>
+            </div>
+            <div class="content">
+                <p><strong>非正式标准： 行业通常以 <100 ppm (ng/mg) 作为目标限度。</strong></p>
+                <p><strong>监管视角： FDA和EMA要求尽可能的低，且必须使用灵敏方法检测。</strong></p>
+                <p><strong>现状： 已批准药物的平均HCP水平约为 20 ppm。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_6_1.jpg" alt="企业控制HCP标准与监管要求分析">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-7">
+            <div class="slide-header">
+                <div class="slide-number">7</div>
+                <h2 class="slide-title">HCP去除策略1：收获液杂质沉淀技术</h2>
+            </div>
+            <div class="content">
+                <p><strong>阳离子聚合物（PAA）： 在pH 7、7.5 mS/cm条件下，使用0.05% PAA可去除>75%的HCP。</strong></p>
+                <p><strong>辛酸沉淀（CA）： 在pH 5.0-5.5条件下，0.4-1%辛酸能有效沉淀DNA和部分HCP。</strong></p>
+                <p><strong>CaCl2/PEG： 也用于辅助沉淀，但PEG可能导致收率下降。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_7_1.jpg" alt="HCP去除策略1：收获液杂质沉淀技术">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-8">
+            <div class="slide-header">
+                <div class="slide-number">8</div>
+                <h2 class="slide-title">HCP去除策略2：收获液澄清中的深层过滤去除效果</h2>
+            </div>
+            <div class="content">
+                <p><strong>作用机制： 机械筛分与电荷吸附（静电/疏水）。</strong></p>
+                <p><strong>合成材料： 如 Millipore X0SP，比传统DE滤膜（B1HC/X0HC）具有更高蛋白质结合力。</strong></p>
+                <p><strong>混合模式： 3M Emphaze AEX 混合净化器，结合AEX功能，HCP去除率约31%，DNA LRV > 4。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_8_1.jpg" alt="HCP去除策略2：收获液澄清中的深层过滤去除效果">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-9">
+            <div class="slide-header">
+                <div class="slide-number">9</div>
+                <h2 class="slide-title">HCP去除策略：ProteinA层析过程</h2>
+            </div>
+            <div class="content">
+                <p><strong>效果： 单步通常可去除 >90% 的HCP（LRV 2.5-4）。</strong></p>
+                <p><strong>残留机制： 主要是与mAb的特异性结合或“搭便车”现象（如通过染色质调节）。</strong></p>
+                <p><strong>残留水平： 洗脱液中典型残留为 2,000 至 >10,000 ppm</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_9_1.jpg" alt="HCP去除策略：ProteinA层析过程">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-10">
+            <div class="slide-header">
+                <div class="slide-number">10</div>
+                <h2 class="slide-title">Protein A 过程淋洗策略详述（淋洗剂）</h2>
+            </div>
+            <div class="content">
+                <p><strong>高盐淋洗： 0.5-2.0 M NaCl，通过屏蔽静电作用去除HCP。</strong></p>
+                <p><strong>精氨酸（Arginine）： 0.1-1 M，打破非特异性相互作用，效果通常优于高盐。</strong></p>
+                <p><strong>高pH淋洗： pH > 8.0，改变HCP和mAb电荷性质，增强静电排斥。</strong></p>
+                <p><strong>添加剂： 尿素（2 M）、异丙醇（10%）、表面活性剂（1% Triton X-100）。</strong></p>
+                <p><strong>辛酸钠淋洗对去除某些特定蛋白酶（如Cathepsin D）非常有效</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_10_1.jpg" alt="Protein A 过程淋洗策略详述（淋洗剂）">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-11">
+            <div class="slide-header">
+                <div class="slide-number">11</div>
+                <h2 class="slide-title">淋洗条件数据比较</h2>
+            </div>
+            <div class="content">
+                <p><strong>精氨酸洗涤： 相比标准洗涤，HCP去除率可从 2 LRV 提升至 5 LRV。</strong></p>
+                <p><strong>辛酸钠+高盐： 对高难度mAb（如bsAb C），洗脱液HCP可从 >8000 ppm 降至约 4000 ppm。</strong></p>
+                <p><strong>NaCl浓度： 250 mM 通常已足够实现大部分去除潜力，进一步增加浓度效果有限。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_11_1.jpg" alt="淋洗条件数据比较">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-12">
+            <div class="slide-header">
+                <div class="slide-number">12</div>
+                <h2 class="slide-title">病毒灭活进一步处理：中和诱导沉淀策略</h2>
+            </div>
+            <div class="content">
+                <p><strong>中和诱导沉淀</strong></p>
+                <p><strong>Protein A洗脱液滴定至 pH 5.0-7.5，利用HCP等电点差异引发沉淀。</strong></p>
+                <p><strong>辅助沉淀</strong></p>
+                <p><strong>在中和阶段加入 1% 辛酸，可大幅增加HCP去除率。</strong></p>
+                <p><strong>浊度去除：</strong></p>
+                <p><strong>必须配合物理分离步骤。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_12_1.jpg" alt="病毒灭活进一步处理：中和诱导沉淀策略">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-13">
+            <div class="slide-header">
+                <div class="slide-number">13</div>
+                <h2 class="slide-title">灭活病毒后深层过滤效果</h2>
+            </div>
+            <div class="content">
+                <p><strong>常用品牌：</strong></p>
+                <p><strong>Millipore A1HC / X0HC 或含活性炭的 CR40。</strong></p>
+                <p><strong>性能数据：</strong></p>
+                <p><strong>CR40 在 150 L/m² 载量下，HCP 突破仍低于 10%，而 X0HC 在相同载量下突破可达 75%。</strong></p>
+                <p><strong>核心优势：</strong></p>
+                <p><strong>CR40 能吸附低分子量（<75 kDa）HCP，利用活性炭巨大的比表面积提高载量。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_13_1.jpg" alt="灭活病毒后深层过滤效果">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-14">
+            <div class="slide-header">
+                <div class="slide-number">14</div>
+                <h2 class="slide-title">灭活后辛酸沉淀与PEG沉淀比较</h2>
+            </div>
+            <div class="content">
+                <p><strong>辛酸沉淀（CA）：</strong></p>
+                <p><strong>1% 浓度、pH 5.0-5.4 表现最佳，收率高，杂质去除显著。</strong></p>
+                <p><strong>PEG沉淀：</strong></p>
+                <p><strong>也能触发沉淀，但往往以牺牲产品收率为代价。</strong></p>
+                <p><strong>综合去除： 结合多种沉淀剂可达到与Protein A相当的去除水平。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_14_1.jpg" alt="灭活后辛酸沉淀与PEG沉淀比较">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-15">
+            <div class="slide-header">
+                <div class="slide-number">15</div>
+                <h2 class="slide-title">精纯策略1：AEX阴离子交换层析</h2>
+            </div>
+            <div class="content">
+                <p><strong>流动模式（FT）： 利用大多数HCP（pI < 7）带负电而mAb带正电的差异。</strong></p>
+                <p><strong>弱结合分配层析（WP）： 在特定pH/电导率下，杂质结合力强于产品。去除率可达 4 LRV，远高于普通FT模式的 <1 LRV。</strong></p>
+                <p><strong>数据： 对于某些mAb，AEX可将HCP从 ~100 ppm 降低至 <10 ppm。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_15_1.jpg" alt="精纯策略1：AEX阴离子交换层析">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-16">
+            <div class="slide-header">
+                <div class="slide-number">16</div>
+                <h2 class="slide-title">精纯策略2：复合模式填料（mixed-mode）</h2>
+            </div>
+            <div class="content">
+                <p><strong>填料： 如 Capto adhere（结合疏水和离子作用）。</strong></p>
+                <p><strong>优势： 处理Protein A无法去除的高难度HCP（如Cathepsin Z）。</strong></p>
+                <p><strong>数据： 配合辛酸预处理，可将HCP从 >300,000 ppm 最终降至 15 ppm。</strong></p>
+                <p><strong>羟基磷灰石（CHT）： 有效去除聚集体和HCP，去除率可达 2 LRV。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_16_1.jpg" alt="精纯策略2：复合模式填料（mixed-mode）">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-17">
+            <div class="slide-header">
+                <div class="slide-number">17</div>
+                <h2 class="slide-title">精纯策略3：高性能超滤HPTFF与新手段展望</h2>
+            </div>
+            <div class="content">
+                <p><strong>HPTFF： 利用带电膜，mAb收率高，HCP可降低 10倍 至 <10 ppm。</strong></p>
+                <p><strong>HPCMP（逆流膜净化）： 真正的连续工艺，HCP去除率可达 100倍（2-log），与Protein A相当。</strong></p>
+                <p><strong>活性炭膜： 作为Protein A的替代或补充。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_17_1.jpg" alt="精纯策略3：高性能超滤HPTFF与新手段展望">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-18">
+            <div class="slide-header">
+                <div class="slide-number">18</div>
+                <h2 class="slide-title">主要HCP去除步骤性能对比</h2>
+            </div>
+            <div class="content">
+                <p><strong>多步组合更容易达到符合要求的HCP</strong></p>
+                <div class="table-wrapper"><table>
+                    <thead><tr><th>技术类型</th><th>HCP 去除率 (LRV)</th><th>mAb 收率 (%)</th><th>主要优势</th><th>主要劣势</th></tr></thead><tbody>
+                    <tr><td>Protein A 亲和层析</td><td>2.5 - 4.0</td><td>>95%</td><td>极高特异性，工业金标准</td><td>填料昂贵、存在“搭便车”效应</td></tr>
+                    <tr><td>AEX (阴离子交换)</td><td>高达 4.0</td><td>>90%</td><td>精纯效果极佳，去除强酸性蛋白</td><td>工艺窗口（pH/电导率）较窄</td></tr>
+                    <tr><td>辛酸沉淀</td><td>1.0 - 2.0</td><td>95%</td><td>成本极低，可处理高浓度料液</td><td>需精确调节 pH，批次间稳定性挑战</td></tr>
+                    <tr><td>HPCMP (高性能膜过滤)</td><td>2</td><td>>87%</td><td>连续运行、能耗低、占地小</td><td>需严格防止膜污染（Fouling）</td></tr>
+                </tbody></table></div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-19">
+            <div class="slide-header">
+                <div class="slide-number">19</div>
+                <h2 class="slide-title">总结：文件下游HCP控制推荐</h2>
+            </div>
+            <div class="content">
+                <p><strong>这是一个“工具箱”策略，需根据mAb的具体理化性质进行优化</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_19_1.jpg" alt="总结：文件下游HCP控制推荐">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-20">
+            <div class="slide-header">
+                <div class="slide-number">20</div>
+                <h2 class="slide-title">HCP去除策略新技术展望：膜、新型配体、基因编辑前沿趋势</h2>
+            </div>
+            <div class="content">
+                <p><strong>合成肽配体（LigaGuard）： 针对性捕获高风险HCP，去除效果优于传统填料。</strong></p>
+                <p><strong>连续化工艺： 整合SPTFF和多柱层析，提高效率且不降低HCP去除能力。</strong></p>
+                <p><strong>基因编辑： 上游直接敲除（Knock-out）难去除的HCP（如LPL、Cathepsin D）。</strong></p>
+                <p><strong>新膜材料： 高通量合成深层过滤膜提升工艺一致性。</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_20_1.jpg" alt="HCP去除策略新技术展望：膜、新型配体、基因编辑前沿趋势">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-21">
+            <div class="slide-header">
+                <div class="slide-number">21</div>
+                <h2 class="slide-title">常见HCP蛋白种类</h2>
+            </div>
+            <div class="content">
+                <div class="table-wrapper"><table>
+                    <thead><tr><th>Wash modifiers</th><th>Concentration</th><th>HCP-mAb Ddisruption</th></tr></thead><tbody>
+                    <tr><td>Arginine</td><td>0.1-1.0M</td><td>Electrostatic and hydrophobic interactions and hydrogen bonding</td></tr>
+                    <tr><td>CHAPs</td><td>1%</td><td>N/A</td></tr>
+                    <tr><td>Guanidine HCl</td><td>1M</td><td>N/A</td></tr>
+                    <tr><td>Isopropanol</td><td>5-20%</td><td>Reduce hydrophobic interactions.Cons oganic solvent</td></tr>
+                    <tr><td>Propylene glycol</td><td>5-20%</td><td>Hydrophilic,stabilise proteins by altering solvent environment ;break down non-specific interactions between mAb and HCPs</td></tr>
+                    <tr><td>TMAC</td><td>0.5M</td><td>N/A</td></tr>
+                    <tr><td>Triton X-100</td><td><1%</td><td>Similar to the functions of propylene glycol</td></tr>
+                    <tr><td>Tween-80</td><td>1%</td><td>N/A</td></tr>
+                    <tr><td>Sodium caprylate</td><td>50mM</td><td>Compete with HCPs for the binding sites on antibody</td></tr>
+                    <tr><td>Sodium chloride</td><td>0.1-2M</td><td>N/A</td></tr>
+                    <tr><td>Urea</td><td>0.5-3M</td><td>Hydrogen bond breaker, denatures proteins at high concentration of >2M</td></tr>
+                </tbody></table></div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-22">
+            <div class="slide-header">
+                <div class="slide-number">22</div>
+                <h2 class="slide-title">某FC融合蛋白项目HCP去除:case 1</h2>
+            </div>
+            <div class="content">
+                <p><strong>Load</strong></p>
+                <p><strong>Elution</strong></p>
+                <p><strong>NMab填料，通过亲和步骤上样后的淋洗策略，去除HCP，结果显示盐酸胍具有显著HCP去除效果，其次为5%异丙醇溶液。</strong></p>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-23">
+            <div class="slide-header">
+                <div class="slide-number">23</div>
+                <h2 class="slide-title">某FC融合蛋白HCP去除:case 2</h2>
+            </div>
+            <div class="content">
+                <p><strong>MW = ~70 KD</strong></p>
+                <p><strong>pI = 5.9</strong></p>
+                <p><strong>去HCP效果不佳</strong></p>
+                <p><strong>重点优化步骤</strong></p>
+                <p><strong>该项目挑战在于pI 较低，阴离子5.0条件通常效果大打折扣，所以将重点放在亲和步骤与阳离子考察</strong></p>
+                <div class="slide-image">
+                    <img src="/posts/images/hcp-training-2026/slide_23_1.png" alt="某FC融合蛋白HCP去除:case 2">
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-24">
+            <div class="slide-header">
+                <div class="slide-number">24</div>
+                <h2 class="slide-title">亲和阶段HCP去除尝试</h2>
+            </div>
+            <div class="content">
+                <p><strong>结论：淋洗条件中，加入精氨酸效果较为显著，可以使得HCP降低至对照组一半。Buffer类型中，醋酸条件可以获得更好的HCP去除效果。</strong></p>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-25">
+            <div class="slide-header">
+                <div class="slide-number">25</div>
+                <h2 class="slide-title">精纯步骤HCP去除条件考察</h2>
+            </div>
+            <div class="content">
+                <p><strong>结合太强</strong></p>
+                <p><strong>结论：</strong></p>
+                <p><strong>阴离子5.0条件可以流穿，复合模式无法流穿，其中几个不同类型阴离子并没有显著差异，都可以将HCP去除60%以上，但是整体偏高。</strong></p>
+                <p><strong>阳离子不同填料去除效果差异较大，该项目软胶阳离子有更好HCP去除表现，可以满足工艺要求。</strong></p>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-26">
+            <div class="slide-header">
+                <div class="slide-number">26</div>
+                <h2 class="slide-title">谢谢观看</h2>
+            </div>
+            <div class="content">
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>
+                <a href="/categories/antibody/">返回抗体纯化</a> |
+                <a href="/posts/">返回文献列表</a> |
+                <a href="/">返回首页</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 0.85em;">
+                本页面最后更新于 2026-04-04 | 由纳微科技提供
+            </p>
+        </footer>
+    </div>
+    
+    <a href="#" class="back-to-top" title="返回顶部">↑</a>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蛋白纯化文献赏析 | 专业文献导航</title>
+    <meta name="description" content="专注于蛋白纯化工艺优化的专业文献导航站">
+    <link rel="canonical" href="https://jinbaisheng.github.io/">
+    <style>
+        :root {
+            --antibody: #667eea;
+            --recombinant: #764ba2;
+            --blood: #e74c3c;
+            --vaccine: #27ae60;
+            --media: #f39c12;
+            --other: #95a5a6;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Header */
+        .header {
+            background: var(--bg-gradient);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.8em; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .header p { font-size: 1.3em; opacity: 0.95; max-width: 700px; margin: 0 auto 30px; }
+        .stats-bar { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 2.5em; font-weight: bold; }
+        .stat-label { font-size: 0.95em; opacity: 0.9; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { font-size: 1.8em; color: #2c3e50; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 3px solid var(--antibody); }
+        
+        /* Category Grid */
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .category-card { background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+        .category-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .category-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .category-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; color: white; }
+        .category-name { font-size: 1.4em; font-weight: 600; color: #2c3e50; }
+        .category-desc { color: #666; font-size: 0.95em; margin-bottom: 15px; min-height: 45px; }
+        .category-count { display: inline-block; padding: 5px 12px; background: #f0f2f5; border-radius: 20px; font-size: 0.85em; color: #666; }
+        
+        /* Pinned Section */
+        .pinned-section { margin-bottom: 50px; }
+        .pinned-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
+        .pinned-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .pinned-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .pinned-badge { background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 5px 15px; font-size: 0.8em; font-weight: 600; display: inline-block; }
+        .pinned-content { padding: 25px; }
+        .pinned-title { font-size: 1.25em; font-weight: 600; color: #2c3e50; margin: 10px 0; line-height: 1.4; }
+        .pinned-title:hover { color: var(--antibody); }
+        .pinned-desc { color: #666; font-size: 0.95em; margin-bottom: 15px; }
+        .pinned-meta { display: flex; justify-content: space-between; align-items: center; color: #999; font-size: 0.85em; }
+        .pinned-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tag { padding: 3px 10px; background: #f0f2f5; border-radius: 15px; font-size: 0.8em; color: #666; }
+        
+        /* Recent Articles */
+        .article-list { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .article-item { padding: 20px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+        .article-item:last-child { border-bottom: none; }
+        .article-item:hover { background: #f8f9fa; }
+        .article-info h4 { font-size: 1.1em; color: #2c3e50; margin-bottom: 5px; }
+        .article-info h4:hover { color: var(--antibody); }
+        .article-info .meta { font-size: 0.85em; color: #999; }
+        .view-all { color: var(--antibody); font-weight: 500; }
+        
+        .footer { background: #2c3e50; color: #bdc3c7; text-align: center; padding: 40px 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #ecf0f1; }
+        .footer-links a:hover { color: white; }
+        
+        /* Upload Section */
+        .upload-section { background: white; border-radius: 16px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .upload-section h3 { font-size: 1.3em; color: #2c3e50; margin-bottom: 15px; }
+        .upload-info { background: #f8f9fa; border-radius: 10px; padding: 20px; margin-bottom: 15px; }
+        .upload-info p { color: #666; margin-bottom: 10px; }
+        .upload-info code { background: #e8eaed; padding: 2px 8px; border-radius: 4px; font-size: 0.9em; }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .stats-bar { gap: 30px; }
+            .category-grid { grid-template-columns: 1fr; }
+            .pinned-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>📚 蛋白纯化文献赏析</h1>
+        <p>专注于抗体纯化、重组蛋白、疫苗、血液制品等工艺优化与技术创新</p>
+        <div class="stats-bar">
+            <div class="stat-item"><div class="stat-value">4</div><div class="stat-label">文献总数</div></div>
+            <div class="stat-item"><div class="stat-value">6</div><div class="stat-label">专业分类</div></div>
+            <div class="stat-item"><div class="stat-value">2</div><div class="stat-label">精选推荐</div></div>
+            <div class="stat-item"><div class="stat-value">每周</div><div class="stat-label">持续更新</div></div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section>
+            <h2 class="section-title">📂 专业分类</h2>
+            <div class="category-grid">
+                <a href="/categories/antibody/" class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: var(--antibody)">💉</div>
+                        <div class="category-name">抗体纯化</div>
+                    </div>
+                    <div class="category-desc">抗体类药物纯化工艺、抗体片段、ADC偶联物、双特异性抗体等</div>
+                    <span class="category-count">4 篇文章</span>
+                </a>
+                <a href="/categories/recombinant/" class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: var(--recombinant)">🧬</div>
+                        <div class="category-name">重组蛋白纯化</div>
+                    </div>
+                    <div class="category-desc">重组表达蛋白的纯化策略、工艺开发与优化、标签蛋白等</div>
+                    <span class="category-count">0 篇文章</span>
+                </a>
+                <a href="/categories/blood/" class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: var(--blood)">🩸</div>
+                        <div class="category-name">血液制品纯化</div>
+                    </div>
+                    <div class="category-desc">血液制品、凝血因子、白蛋白、免疫球蛋白等</div>
+                    <span class="category-count">0 篇文章</span>
+                </a>
+                <a href="/categories/vaccine/" class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: var(--vaccine)">💊</div>
+                        <div class="category-name">疫苗纯化</div>
+                    </div>
+                    <div class="category-desc">病毒疫苗、亚单位疫苗、mRNA疫苗、病毒样颗粒等纯化工艺</div>
+                    <span class="category-count">0 篇文章</span>
+                </a>
+                <a href="/categories/media/" class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: var(--media)">📦</div>
+                        <div class="category-name">竞品填料更新</div>
+                    </div>
+                    <div class="category-desc">层析填料、膜包、过滤产品等竞品动态、新品发布与测评</div>
+                    <span class="category-count">0 篇文章</span>
+                </a>
+                <a href="/categories/other/" class="category-card">
+                    <div class="category-header">
+                        <div class="category-icon" style="background: var(--other)">📚</div>
+                        <div class="category-name">其他</div>
+                    </div>
+                    <div class="category-desc">纯化相关技术、仪器设备、学术会议、行业报告等</div>
+                    <span class="category-count">0 篇文章</span>
+                </a>
+            </div>
+        </section>
+        
+        <section class="pinned-section">
+            <h2 class="section-title">⭐ 精选推荐</h2>
+            <div class="pinned-grid">
+                <a href="/posts/amino-acid-ph-shift-protein-a/" class="pinned-card">
+                    <span class="pinned-badge">⭐ 精选</span>
+                    <div class="pinned-content">
+                        <div class="pinned-title">氨基酸诱导 pH 偏移策略：革新 Protein A 层析洗脱工艺</div>
+                        <div class="pinned-desc">深入分析药明生物团队研发的氨基酸诱导 pH 偏移洗脱策略，解决低 pH 不稳定抗体的 Protein A 层析聚集难题</div>
+                        <div class="pinned-meta">
+                            <div class="pinned-tags">
+                                <span class="tag">Protein A</span>
+                                <span class="tag">抗体稳定</span>
+                            </div>
+                            <span>2026-04-04</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/posts/fc-engineering-adcc/" class="pinned-card">
+                    <span class="pinned-badge">⭐ 精选</span>
+                    <div class="pinned-content">
+                        <div class="pinned-title">抗体 Fc 段工程化改造：增强 ADCC 活性的技术突破</div>
+                        <div class="pinned-desc">深入分析抗体 Fc 段工程化改造技术，从工艺工程师视角解读其在提高 ADCC 活性方面的创新与应用</div>
+                        <div class="pinned-meta">
+                            <div class="pinned-tags">
+                                <span class="tag">抗体工程</span>
+                                <span class="tag">ADCC</span>
+                            </div>
+                            <span>2026-04-04</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="section-title">📖 最新文献</h2>
+            <div class="article-list">
+                <div class="article-item">
+                    <div class="article-info">
+                        <a href="/posts/hcp-removal-training-2026/"><h4>HCP去除策略与检测方法培训（2026）</h4></a>
+                        <div class="meta"><span>📁 抗体纯化</span> | <span>📅 2026-04-04</span></div>
+                    </div>
+                    <a href="/posts/hcp-removal-training-2026/" style="color: var(--antibody);">阅读 →</a>
+                </div>
+                <div class="article-item">
+                    <div class="article-info">
+                        <a href="/posts/protein-a-purification/"><h4>抗体 Protein A 亲和层析工艺优化 | 文献赏析</h4></a>
+                        <div class="meta"><span>📁 抗体纯化</span> | <span>📅 2026-03-26</span></div>
+                    </div>
+                    <a href="/posts/protein-a-purification/" style="color: var(--antibody);">阅读 →</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="upload-section">
+            <h3>📤 培训资料</h3>
+            <div class="upload-info">
+                <p>HCP去除策略与检测方法培训（纳微科技2026）</p>
+                <p>📄 <a href="/ppts/hcp-removal-training-2026.html" style="color: #667eea;">查看完整培训课件 →</a></p>
+                <p>📥 <a href="/ppts/HCP去除培训-2026.pptx" style="color: #667eea;">下载原始PPT文件</a></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/posts/">文献列表</a>
+            <a href="/categories/antibody/">分类浏览</a>
+            <a href="/tags/">标签索引</a>
+            <a href="/index.xml">RSS订阅</a>
+        </div>
+        <p>© 2026 蛋白纯化文献赏析 | 由 OpenClaw 驱动 | 持续更新中</p>
+    </footer>
+</body>
+</html>
