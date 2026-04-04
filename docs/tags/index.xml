@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on 蛋白纯化文献赏析</title>
+    <link>https://jinbaisheng.github.io/purification-literature-review/tags/</link>
+    <description>Recent content in Tags on 蛋白纯化文献赏析</description>
+    <image>
+      <title>蛋白纯化文献赏析</title>
+      <url>https://jinbaisheng.github.io/purification-literature-review/images/og-image.jpg</url>
+      <link>https://jinbaisheng.github.io/purification-literature-review/images/og-image.jpg</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 26 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jinbaisheng.github.io/purification-literature-review/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Protein A</title>
+      <link>https://jinbaisheng.github.io/purification-literature-review/tags/protein-a/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinbaisheng.github.io/purification-literature-review/tags/protein-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>亲和层析</title>
+      <link>https://jinbaisheng.github.io/purification-literature-review/tags/%E4%BA%B2%E5%92%8C%E5%B1%82%E6%9E%90/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinbaisheng.github.io/purification-literature-review/tags/%E4%BA%B2%E5%92%8C%E5%B1%82%E6%9E%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>抗体</title>
+      <link>https://jinbaisheng.github.io/purification-literature-review/tags/%E6%8A%97%E4%BD%93/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinbaisheng.github.io/purification-literature-review/tags/%E6%8A%97%E4%BD%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>蛋白纯化</title>
+      <link>https://jinbaisheng.github.io/purification-literature-review/tags/%E8%9B%8B%E7%99%BD%E7%BA%AF%E5%8C%96/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinbaisheng.github.io/purification-literature-review/tags/%E8%9B%8B%E7%99%BD%E7%BA%AF%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
